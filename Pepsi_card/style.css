@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+p {
+   padding: 0;
+   margin: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+button {
+   background-color: transparent;
+   border: none;
+   font-family: inherit;
+}
+
+.card {
+   width: 600px;
+   height: 350px;
+   position: relative;
+   border-radius: 20px;
+   display: flex;
+   align-items: center;
+   transition: 0.5s;
+   margin: 10px;
+}
+
+.card .circle {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 20px;
+   overflow: hidden;
+}
+
+.card .circle::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #d83133;
+   clip-path: circle(120px at center);
+   transition: 0.5s;
+}
+
+.card:hover .circle::before {
+   background-color: #0065c3;
+   clip-path: circle(400px at center);
+}
+
+.card img {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 400px;
+   pointer-events: none;
+   transition: 0.5s;
+}
+
+.card:hover img {
+   left: 72%;
+   height: 600px;
+}
+
+.content {
+   position: relative;
+   width: 50%;
+   left: 20%;
+   padding: 20px 20px 20px 40px;
+   transition: 0.5s;
+   opacity: 0;
+   visibility: hidden;
+}
+
+.card:hover .content {
+   left: 0;
+   opacity: 1;
+   visibility: visible;
+}
+
+.title {
+   font-size: 2em;
+   color: #fff;
+   text-transform: uppercase;
+   line-height: 1em;
+   margin-bottom: 10px;
+}
+
+.text {
+   color: #fff;
+   font-size: 16px;
+   margin-bottom: 15px;
+}
+
+.button {
+   padding: 10px 20px;
+   background-color: #fff;
+   position: relative;
+   border-radius: 10px;
+   color: #000;
+   display: inline-block;
+   font-weight: 600;
+   transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+   background-color: #d83133;
+   color: #fff;
+}
+
+@media (max-width: 991px) {
+
+   .card {
+      width: auto;
+      max-width: 350px;
+      align-items: flex-start;
+   }
+
+   .card:hover {
+      height: 600px;
+   }
+
+   .content {
+      width: 100%;
+      left: 0;
+      padding: 40px;
+   }
+
+   .card:hover img {
+      top: 68%;
+      left: 50%;
+      height: 420px;
+
+   }
+}
+
+@media (max-width: 360px) {
+   .content {
+      padding: 30px;
+   }
+}
