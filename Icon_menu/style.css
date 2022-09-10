@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   margin: 0;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+p {
+   padding: 0;
+   margin: 0;
+}
+
+button {
+   background-color: transparent;
+   border: none;
+   font-family: inherit;
+}
+
+.nav {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: rgb(225, 238, 230);
+}
+
+.nav__list {
+   display: flex;
+   position: relative;
+}
+
+.nav__link {
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: #fff;
+   border-radius: 60px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.01);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   transition: all 0.5s ease;
+   cursor: pointer;
+   z-index: 1;
+}
+
+.nav__link:not(:last-child) {
+   margin-right: 30px;
+}
+
+.nav__link:hover {
+   width: 240px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.01);
+}
+
+.nav__link::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   border-radius: 60px;
+   background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+   background-blend-mode: normal, lighten, soft-light;
+   transition: 0.5s;
+   opacity: 0;
+}
+
+.nav__link:hover::before {
+   opacity: 1;
+}
+
+.nav__icon {
+   font-size: 40px;
+   transition: 0.5s;
+}
+
+.nav__icon a {
+   color: rgb(185, 184, 184);
+}
+
+.nav__link:hover .nav__icon {
+   transform: scale(0);
+}
+
+
+.nav__title {
+   position: absolute;
+   color: #fff;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: 20px;
+   transform: scale(0);
+   transition: 0.5s;
+}
+
+.nav__link:hover .nav__title {
+   transform: scale(1);
+   transition-delay: 0.25s;
+}
+
+.nav__link::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 20px;
+   border-radius: 60px;
+   background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+   background-blend-mode: normal, lighten, soft-light;
+   transition: 0.5s;
+   filter: blur(15px);
+   z-index: -1;
+   opacity: 0;
+}
+
+.nav__link:hover::after {
+   opacity: 0.6;
+}
+
+.active {
+   width: 240px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.01);
+   background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+   background-blend-mode: normal, lighten, soft-light;
+}
+
+.nav__link.active .nav__icon {
+   transform: scale(0);
+}
+
+.nav__link.active .nav__title {
+   transform: scale(1);
+}
+
+.nav__link.active::after {
+   opacity: 0.6;
+}
