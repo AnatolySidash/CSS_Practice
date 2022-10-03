@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   margin: 0;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #222;
+}
+
+p {
+   padding: 0;
+   margin: 0;
+}
+
+button {
+   background-color: transparent;
+   border: none;
+   font-family: inherit;
+}
+
+
+a {
+   position: relative;
+   width: 220px;
+   height: 80px;
+   margin: 15px 10px;
+   text-decoration: none;
+   background-color: #333;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+
+a::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 6px;
+   height: 100%;
+   background-color: #00fe73;
+   transition: 0.5s ease-in-out;
+   transition-delay: 0.5s;
+}
+
+a::after {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 6px;
+   height: 100%;
+   background-color: #00fe73;
+   transition: 0.5s ease-in-out;
+   transition-delay: 0.5s;
+}
+
+a:nth-child(2)::before,
+a:nth-child(2)::after {
+   background-color: #fe1a6f;
+}
+
+a:hover::before,
+a:hover::after {
+   width: 50%;
+   transition-delay: 0s;
+}
+
+a span {
+   position: absolute;
+   z-index: 1;
+   color: #fff;
+   font-size: 24px;
+   transition: 0.5s;
+}
+
+a span:nth-child(1) {
+   transition-delay: 0.75s;
+}
+
+a:hover span:nth-child(1) {
+   transform: scale(0);
+   transition-delay: 0s;
+}
+
+a span:nth-child(2) {
+   transform: scale(3);
+   opacity: 0;
+   color: #111;
+   transition-delay: 0s;
+}
+
+a:hover span:nth-child(2) {
+   transform: scale(1);
+   opacity: 1;
+   transition-delay: 0.6s;
+   z-index: 10;
+}
